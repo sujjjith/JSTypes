@@ -1,6 +1,7 @@
 package com.js.type.service;
 
 import com.js.type.concurrency.Query;
+import com.js.type.concurrency.Result;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import tern.EcmaVersion;
@@ -43,19 +44,7 @@ public class JSType {
 		initProject(nodejsBaseDir, project);
 		NodejsTernServer server = createTernServer(project);
 
-		ExecutorService pool = Executors.newCachedThreadPool();
-		List<Future<String>> futures = new ArrayList<>();
-		for(String jsFile : jsFiles){
-			Query query = new Query(server, jsFile);
-			Future<String> result = pool.submit(query);
-			futures.add(result);
-		}
-
-		List<String> results = new ArrayList<>();
-
-		for(Future<String> f : futures){
-			results.add(f.get());
-		}
+		List<String> results = new Result().getResults(jsFiles, server);
 
 		return results;
 	}

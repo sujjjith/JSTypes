@@ -36,8 +36,7 @@ public class JSTypeTest {
 	
 	@Test
 	public void testGetTypesRepo() throws IOException, InterruptedException, TernException, JSONException, ExecutionException {
-		String QUERY_BASE_DIR = unzipUtil.unzip("/home/sujithk/js-repos-part/repo~joeyism~node-zeroes~42971394~false~JavaScript~master~1.zip");
-		String QUERY_FILE = "index.js";
+		String QUERY_BASE_DIR = unzipUtil.unzip("/home/sujithk/js-repos-part/repo~stayradiated~onepasswordjs~8572449~false~JavaScript~master~16.zip");
 
 		List<String> actual = jsType.getTypes(JSTypes.NODEJS, QUERY_BASE_DIR);
 //		String expected = fileUtil.getFile("repo_index_types.json");
