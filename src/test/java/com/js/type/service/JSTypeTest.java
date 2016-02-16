@@ -1,18 +1,7 @@
 package com.js.type.service;
 
-import com.js.type.util.FileUtil;
-import com.js.type.util.UnzipUtil;
-import org.json.JSONException;
-import org.junit.Before;
-import org.junit.Test;
-import tern.TernException;
-
-import java.io.IOException;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
-
 public class JSTypeTest {
-	JSType jsType;
+	/*JSType jsType;
 	FileUtil fileUtil;
 	UnzipUtil unzipUtil;
 	
@@ -46,5 +35,5 @@ public class JSTypeTest {
 	public void test() throws IOException {
 		String QUERY_BASE_DIR = unzipUtil.unzip("/home/sujithk/js-repos-part/repo~28msec~28.io-angularjs~16548195~false~JavaScript~master~3.zip");
 		System.out.println(QUERY_BASE_DIR);
-	}
+	}*/
 }
