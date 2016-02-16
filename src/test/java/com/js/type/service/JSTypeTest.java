@@ -5,7 +5,6 @@ import com.js.type.util.UnzipUtil;
 import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONAssert;
 import tern.TernException;
 
 import java.io.IOException;
