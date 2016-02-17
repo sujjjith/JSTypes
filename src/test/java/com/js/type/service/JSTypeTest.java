@@ -12,7 +12,7 @@ public class JSTypeTest {
 		unzipUtil = new UnzipUtil();
 	}
 
-	@Test
+	*//*@Test
 	public void testGetTypesNodeBrow() throws IOException, InterruptedException, TernException, JSONException, ExecutionException {
 		String QUERY_BASE_DIR = "/home/sujithk/workspace/node-browserify";
 		String QUERY_FILE = "index.js";
@@ -20,11 +20,11 @@ public class JSTypeTest {
 		List<String> actual = jsType.getTypes(JSTypes.NODEJS, QUERY_BASE_DIR);
 //		String expected = fileUtil.getFile("node-browserify_index_types.json");
 //		JSONAssert.assertEquals(expected, actual,false);
-	}
+	}*//*
 	
 	@Test
 	public void testGetTypesRepo() throws IOException, InterruptedException, TernException, JSONException, ExecutionException {
-		String QUERY_BASE_DIR = unzipUtil.unzip("/home/sujithk/js-repos-part/repo~stayradiated~onepasswordjs~8572449~false~JavaScript~master~16.zip");
+		String QUERY_BASE_DIR = "/home/sujithk/js-repos-part/repo~stayradiated~onepasswordjs~8572449~false~JavaScript~master~16.zip";
 
 		List<String> actual = jsType.getTypes(JSTypes.NODEJS, QUERY_BASE_DIR);
 //		String expected = fileUtil.getFile("repo_index_types.json");

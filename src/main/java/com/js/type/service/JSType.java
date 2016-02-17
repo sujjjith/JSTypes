@@ -1,6 +1,7 @@
 package com.js.type.service;
 
 import com.js.type.concurrency.Result;
+import com.js.type.util.UnzipUtil;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.DirectoryFileFilter;
 import tern.EcmaVersion;
@@ -33,11 +34,14 @@ public class JSType implements Serializable{
 	private static final String TERN_DIR = "./ternjs/node_modules/tern";
 
 	public List<String> getTypes(JSTypes jsType, String zipFilePath) throws IOException, InterruptedException, TernException, ExecutionException {
-		List<String> jsFiles = getJsFilesToQuery(zipFilePath);
+
+		UnzipUtil unzipUtil = new UnzipUtil();
+		String unzipPath = unzipUtil.unzip(zipFilePath);
+		List<String> jsFiles = getJsFilesToQuery(unzipPath);
 		File nodejsBaseDir = getTernRepositoryDir();
 
-		solveDependencies(jsType, zipFilePath);
-		TernProject project = (TernProject) createProject(zipFilePath, jsFiles);
+		solveDependencies(jsType, unzipPath);
+		TernProject project = (TernProject) createProject(unzipPath, jsFiles);
 		initProject(nodejsBaseDir, project);
 		NodejsTernServer server = createTernServer(project);
 
