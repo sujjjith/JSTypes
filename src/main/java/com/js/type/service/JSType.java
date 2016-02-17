@@ -17,13 +17,14 @@ import tern.server.nodejs.process.NodejsProcessManager;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 
-public class JSType {
+public class JSType implements Serializable{
 
 	private static final boolean SERVER_NO_PORT_FILE = true;
 	private static final boolean SERVER_VERBOSE_FLAG = false;
